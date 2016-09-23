@@ -4,23 +4,23 @@ This repo will contain of the code for the individual challenges for the quarter
 
 **Important**: You will have access to view your challenges repo and the original challenges repo, and only you and the teaching will have access to view your challenges repo.
 
-## Add original repo as remote
+## Add upstream repo as remote
 
 After cloning this repo, run the following commands (you only need to do this once per computer):
 
 ```bash
 cd challenges
-git remote add challenges git@github.com:info343e-au16/challenges.git
+git remote add upstream git@github.com:info343e-au16/challenges.git
 ```
 
-This will register the original repo (where the teaching team will commit the starter code for each challenge) as a `remote` that you can `pull` from.
+This will register the upstream `challenges` repo (where the teaching team will commit the starter code for each challenge) as a `remote` that you can `pull` from.
 
 ## Updating your repo with new starter code
 
 When a new assingment has been posted, you must run the following command to update your repo with the starter code for that week's challenge.
 
 ```bash
-git pull challenges master
+git pull upstream master
 ```
 
 ## Working on challenges
@@ -29,10 +29,11 @@ After updating your repo with the starter code for the week's challenge, create 
 
 ```
 # New assignment posted, update repo
-git pull challenges master
+git pull upstream master
 
 # Create and switch to new branch
-git branch challenge2
+git branch files-challenge
+git checkout files-challenge
 
 # cd into the folder for the challenge
 cd challenge2
@@ -47,7 +48,7 @@ When you are ready to turn in your challenge, please create a pull request from 
 ```bash
 # Commit your files
 git add .
-git commit -m "Files for Challenge 1"
+git commit -m "Files for Challenge 2"
 
 # Push your new branch to github
 git push -u
