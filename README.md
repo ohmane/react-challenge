@@ -2,7 +2,7 @@
 
 This repo will contain of the code for the individual challenges for the quarter. The code for each challenge will be stored in its own folder (`challenge#`).
 
-**Important**: You will have access to view your challenges repo and the original challenges repo, and only you and the teaching will have access to view your challenges repo.
+**Important**: By accepting the Github Classroom invite, this repo was created as a copy (not a true fork) of the original `challenges` repo. This is so that you will have access to view your challenges repo and the original `challenges` repo, and only you and the teaching will have access to view your `challenges` repo. You *DO NOT* need to fork this repo.
 
 ## Add upstream repo as remote
 
@@ -13,7 +13,7 @@ cd challenges
 git remote add upstream git@github.com:info343e-au16/challenges.git
 ```
 
-This will register the upstream `challenges` repo (where the teaching team will commit the starter code for each challenge) as a `remote` that you can `pull` from.
+This will register the upstream `challenges` repo (where the teaching team will commit the starter code for each challenge) as a `remote` that you can `git pull` from.
 
 ## Updating your repo with new starter code
 
@@ -32,8 +32,7 @@ After updating your repo with the starter code for the week's challenge, create 
 git pull upstream master
 
 # Create and switch to new branch
-git branch files-challenge
-git checkout files-challenge
+git checkout -b files-challenge
 
 # cd into the folder for the challenge
 cd challenge2
@@ -51,10 +50,10 @@ git add .
 git commit -m "Files for Challenge 2"
 
 # Push your new branch to github
-git push -u
+git push --set-upstream origin challenge2
 ```
 
-Go to your repo on Github, and click the button at the top to create a new pull request.
+Go to your repo on Github, and click the "New pull request" button at the top to create a new pull request.
 
 When your pull request has been created and you are ready to have it graded, **please submit the url to the opened pull request to the assignment on Canvas**.
 
