@@ -10,7 +10,7 @@ After cloning this repo, run the following commands (you only need to do this on
 
 ```bash
 cd challenges
-git remote add upstream git@github.com:info343e-au16/challenges.git
+git remote add upstream https://github.com/info343e-au16/challenges.git
 ```
 
 This will register the upstream `challenges` repo (where the teaching team will commit the starter code for each challenge) as a `remote` that you can `git pull` from.
