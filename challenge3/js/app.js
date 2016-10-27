@@ -21,52 +21,6 @@ starWars.sort(function (movie1, movie2){
     return movie1.title.localeCompare(movie2.title);
 });
 
-// //Setting up new array with movie data
-// var topTicketsSold = new Object();
-
-// topTicketsSold.push({
-//     title:MOVIES[0].title, 
-//     date:MOVIES[0].released,
-//     total:MOVIES[0].tickets
-// });
-
-// //Add the tickets for the movies that have multiple release years, and also just the no repeat movies
-// for(var movieIndex = 1; movieIndex < MOVIES.topTicketsSold.length; movieIndex++) {
-//     var alreadyExists = false;
-//     for(var i = 0; i < topTicketsSold.length; i++) {
-//         console.log('hello');
-//         if(topTicketsSold[i].title === MOVIES[movieIndex].title &&
-//         topTicketsSold[i].date === MOVIES[movieIndex].released) {
-//             topTicketsSold[i].total += MOVIES[movieIndex].tickets;
-//             console.log('hi');
-//             alreadyExists = true;
-//         }
-//     }
-//     if(!alreadyExists) {
-//         topTicketsSold.push({
-//             title:MOVIES[movieIndex].title,
-//             dates:MOVIES[movieIndex].released,
-//             total:MOVIES[movieIndex].tickets
-//         });
-//     }
-// }
-
-// Adds the tickets for the movies that have multiple release years
-//fuck everything here// topTicketsSold.forEach(function (totalTickets, item) {
-//     var currentMovie = item.title + item.released;
-//     if (totalTickets.hasOwnProperty(currentMovie)) {
-//         totalTickets[currentMovie].tickets += item.tickets
-//     } else {
-//         totalTickets[currentMovie] = {
-//             "movie": item.title, "tickets": item.tickets
-//         }
-//     }
-// var topTicketsSold2 = [];
-//     for(currentMovie )
-    
-// });
-// topTicketsSold = totalTickets;
-
 //So that it only does the two data sets we need 
 var top100Movies = MOVIES.map(function (movies){
     var movie = { title: movies.title + " (" + movies.year + ")", tickets: movies.tickets}
@@ -123,7 +77,6 @@ var releasedPre2000Sorted = releasedPre2000.sort(function (a, b){
     var momentB = moment(b.released);
     return momentA.diff(momentB);
 });
-
 
 //Build table
 function buildTable(option) {
@@ -199,22 +152,6 @@ function buildRows(rows, option) {
     // Find the table body, where the rows will be rendered.
     var tbody = document.querySelector("tbody");
 
-    // // Iterate over each movie title,
-    // // create the tr (row element) and td elements (column elements)
-    // // and append to the table body.
-    // for (var genre in rows) {
-    //     var averageSales = rows[genre];
-    //     var titleTr = document.createElement("tr");
-    //     var tdTitle = document.createElement("td");
-    //     var tdSales = document.createElement("td");
-    //     tdTitle.textContent = genre;
-    //     tdSales.textContent = averageSales;
-    //     titleTr.appendChild(tdTitle);
-    //     titleTr.appendChild(tdSales);
-    //     tbody.appendChild(titleTr);
-    // }
-
-
     rows.forEach(function (title) {
         var titleTr = document.createElement("tr");
 
@@ -261,24 +198,4 @@ dropdown.addEventListener("change", function (e) {
         buildRows(averageSalesGenre, 3)
     }
 });
-
-// //Function which formats the date, ticket sales, and revenue
-// function format(createObject, copyObject) {
-//   //loop through the competed array
-//   copyObject.forEach(function(indexName) {
-//     //for every index, pass its values to our current array and format the data
-//     createObject.push({
-//       title: indexName.title,
-//       released: moment(indexName.released).format('M/D/YYYY'),
-//       distributor: indexName.distributor,
-//       genre: indexName.genre,
-//       rating: indexName.rating,
-//       year:indexName.year,
-//       sales: numeral(indexName.sales).format('$0,0'),
-//       tickets: numeral(indexName.tickets).format('0,0'),
-//     });
-//   });
-//   //return the completed array
-//   return createObject;
-// }
 
