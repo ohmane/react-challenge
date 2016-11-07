@@ -2,6 +2,7 @@
 app.js - application script for the movies challenge
 add your code to this file
 */
+<<<<<<< HEAD
 
 // I copied some table skeleton code from https://github.com/info343e-au16/in-class/blob/master/10-20/script.js
 
@@ -200,3 +201,5 @@ dropdown.addEventListener("change", function (e) {
         buildRows(averageSalesGenre, 3)
     }
 });
+=======
+>>>>>>> 1c966a951f5c2ed8c64458ba8904a8591a96a3df
