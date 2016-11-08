@@ -136,6 +136,8 @@ messageForm.addEventListener("submit", function (e) {
 
     // Get the message the user entered
     var message = messageInput.value;
+    messageInput.focus();
+    messageInput.select();
 
     // Create a new message and add it to the list.
     messages.push({
