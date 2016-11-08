@@ -13,7 +13,7 @@
         <h1>Movie Stats from 2006&ndash;2015</h1>
 
         <p>
-            <select id="report-select" class="form-control">
+            <select id="dropdown" class="form-control">
                 <option value="" disabled selected>choose report...</option>
                 <option value="star-wars">Only Star Wars</option>
                 <option value="20th">Re-Released 20th-Century Movies</option>
@@ -22,7 +22,10 @@
             </select>
         </p>
 
-        <div id="report"></div>
+        <div id="report">
+            <h2 id="header"></h2>
+            <table class="table"></table>
+        </div>
 
     </main>
     <!--numeral.js: a number formatting library (http://numeraljs.com/)-->
