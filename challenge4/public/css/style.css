@@ -1,3 +1,73 @@
 /*
  *  This file should contain your custom style rules.
  */
+
+.alert {
+    display: none;
+}
+
+.profile-pic {
+    border-radius: 50px;
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: lightgreen;
+    font-style: italic; 
+    font-weight: bold;
+    font-size: 80px;
+    padding: 25px;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: cornflowerblue;
+    font-weight: bold; 
+    font-size: 50px;
+}
+
+h5 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: cornflowerblue;
+    font-weight: bold; 
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.regular-button {
+    background-color: cornflowerblue;
+    padding: 10px 10px;
+    border-radius: 12.5px;
+    color: white;
+}
+
+.message-box {
+    border: 3px solid lightgray;
+    border-radius: 12.5px;
+    padding: 20px 50px;
+    background-color: whitesmoke;
+}
+
+.delete-button {
+    background-color: indianred;
+    padding: 10px 10px;
+    border-radius: 12.5px;
+    color: white;
+}
+
+
+.delete-button:hover{
+    background-color: red;
+    border: solid white;
+}
+
+.edit-button:hover{
+    background-color: #008CBA;
+    border: solid white;
+}
+.alert.active {
+    display: block;
+}
