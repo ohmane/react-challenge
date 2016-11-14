@@ -1,0 +1,28 @@
+body {
+    padding: 10px 30px;
+    background: rgba(173, 240, 255, 0.19);
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(40, 130, 230);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.search-box {
+    height: 30px;
+}
+
+.search-button {
+    color: white;
+    background-color: royalblue;
+    border: 3px solid ghostwhite;
+    padding: 5px 5px;
+    border-radius: 12.5px;
+}
+
+.search-button:hover {
+    color: white;
+    background-color: darkblue
+}
