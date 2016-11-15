@@ -28,25 +28,32 @@ class App extends React.Component {
 
                   <SavedLocations
                     saved={this.state.saved}
-                    onClick={(name) => this.searchLocation(name)}
+                    onClick={(name) => this.searchName(name)}
                 />
 
                 <form onSubmit={(e) => this.onSearch(e)}>
                     <input type="text" className="search-box" ref="query" placeholder="e.g. Seattle, 98020"/>
-                    <button type="submit" className="search-button">Search</button>
+                    <button type="submit" className="search-button">Search Location</button>
                 </form>
-                
+
+
+                    <button type="submit" className="current-button">Current Location</button>
                 {
+                    
                     this.state.name ? (
                         <Weather
+                            country={this.state.country}
+                            description={this.state.description}
+                            icon={this.state.icon}
                             id={this.state.id}
+                            humidity={this.state.humidity}  
                             main={this.state.main}
                             name={this.state.name}
-                            temp={this.state.main.temp}
-                            temp_min={this.state.main.temp_min}
-                            temp_max={this.state.main.temp_max}
-                            humidity={this.state.main.humidity}                                        
-                            onSave={(name) => this.saveName(name)} 
+                            onSave={(name) => this.saveName(name)}
+                            temp={this.state.temp}
+                            temp_min={this.state.temp_min}
+                            temp_max={this.state.temp_max}        
+                            speed={this.state.speed}   
                         />
                     ) : null
                 }
@@ -61,7 +68,7 @@ class App extends React.Component {
         // If so, do nothing, otherwise,
         // updated saved array.
         if (saved.indexOf(loc) < 0) {
-        saved.push(name);
+        saved.push(loc);
 
         this.setState({
             saved: saved
@@ -83,32 +90,41 @@ class App extends React.Component {
     }
 
     searchName(search) {
-        var url = "http://api.openweathermap.org/data/2.5/weather?q=" + search + "&appid" + API_KEY;
+        var url = "https://www.bell-towne.com/api/weather/?q=" + search + "&appid=" + API_KEY;
 
         fetch(url)
         .then((response) => {
             return response.json();
+        
         })
 
+        
+
         .then((json) => {
+            var country = json.sys.country;
+            var description = json.weather[0].description;
+            var icon = "https://openweathermap.org/img/w/" + json.weather[0].icon + ".png";
             var id = json.id;
-            var main = json.main;
             var humidity= json.main.humidity;
-            var temp_max = json.main.temp_max;
-            var temp_min = json.main.temp_min;
-            var name = json.Name;
-            var onSave= this.saveName(name);
-            var temp = json.main.temp;
+            var main = json.weather[0].main;
+            var name = json.name;
+            var temp = (json.main.temp * 9/5 - 459.67).toFixed(2);;
+            var temp_max = (json.main.temp_max * 9/5 - 459.67).toFixed(2);
+            var temp_min = (json.main.temp_min * 9/5 - 459.67).toFixed(2);
+            var speed = json.wind.speed;
             console.log(json);
             this.setState({
+                country: country,
+                description: description,
+                icon: icon,
                 id: id,
+                humidity: humidity,
                 main: main,
-                humidity: main.humidity,
-                temp_max: main.temp_max,
-                temp_min: main.temp_min,
                 name: name,
-                onSave: onSave,
-                temp: temp
+                temp: temp,
+                temp_max: temp_max,
+                temp_min: temp_min,
+                speed: speed
             });
         });
     }
