@@ -7,6 +7,8 @@ var options = {
   maximumAge: 0
 };
 
+// doesnt work all the time but it is supposed to go through and get the coordinates of current
+// location and then clikc on the search button 
 function success(pos) {
   var crd = pos.coords;
 
