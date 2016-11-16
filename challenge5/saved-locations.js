@@ -1,4 +1,6 @@
 class SavedLocations extends React.Component {
+    
+    // render the list of saved locations
     render() {
         return (
             <ul> 
@@ -8,9 +10,9 @@ class SavedLocations extends React.Component {
                     this.props.saved.map((name) => (
                         <li key={name}>
                             <a href="#" onClick={(e) => this.onSavedClick(e, name)}>
-                                {name}
+                                {name} 
                             </a>
-                        <button className= "delete-button" onClick={(e) => this.remove(e)}>Delete</button>
+                        <button className= "delete-button">Delete</button>
                         </li>
                     ))
                 }
@@ -24,4 +26,5 @@ class SavedLocations extends React.Component {
 
         this.props.onClick(name);
     }
+
 }
