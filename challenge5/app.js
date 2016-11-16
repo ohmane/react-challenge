@@ -9,6 +9,7 @@ class App extends React.Component {
         };
     }
 
+//put it in local storage
     componentDidMount() {
         var savedLocationsJSON = localStorage.getItem('savedLocations');
         var savedLocations= JSON.parse(savedLocationsJSON);
@@ -21,6 +22,7 @@ class App extends React.Component {
         }
     }
 
+//renders the webpage with search form and saved locations if there are any
     render() {
         return (
             <div>
@@ -60,7 +62,7 @@ class App extends React.Component {
             </div>
         );
     }
-
+// saves the name of the location
     saveName(loc) {
         var saved = this.state.saved;
 
@@ -80,7 +82,7 @@ class App extends React.Component {
         }
     }
 
-
+// get the search query that the user types and submits
     onSearch(e) {
         e.preventDefault();
 
@@ -89,6 +91,7 @@ class App extends React.Component {
         this.searchName(queryValue);
     }
 
+// takes the search and puts it into weatherapi, gets all weather info 
     searchName(search) {
         var url = "https://www.bell-towne.com/api/weather/?q=" + search + "&appid=" + API_KEY;
 
@@ -112,7 +115,6 @@ class App extends React.Component {
             var temp_max = (json.main.temp_max * 9/5 - 459.67).toFixed(2);
             var temp_min = (json.main.temp_min * 9/5 - 459.67).toFixed(2);
             var speed = json.wind.speed;
-            console.log(json);
             this.setState({
                 country: country,
                 description: description,
