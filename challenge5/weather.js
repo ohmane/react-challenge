@@ -1,9 +1,12 @@
+// this shows the results, including weather, icon, eand extra info of the query
+
 class Weather extends React.Component {
     render() {
         if(!this.props.name) {
             return null;
         }
         
+        //shows the search results
         return (
             <div className="search_results">
                 <h2>{this.props.name}, {this.props.country}</h2>
